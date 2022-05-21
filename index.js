@@ -1,13 +1,12 @@
 const tmi = require('tmi.js');
 const AUTH = require('./keys');
-console.log(AUTH)
 const client = new tmi.Client({
 	options: { debug: true },
 	identity: {
-		username: '',
+		username: AUTH.USERNAME,
 		password: 'oauth:' + AUTH.TWITCH
 	},
-	channels: [ '' ]
+	channels: AUTH.CHANNELS
 });
 const commandsAvailable = {
   voyatenersuerte: {
